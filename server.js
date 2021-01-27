@@ -1,5 +1,5 @@
 var express = require('express');
-var graphqlHTTP = require('express-graphql');
+var { graphqlHTTP } = require('express-graphql');
 var { buildSchema } = require('graphql');
 
 // Initialize GraphQL schema 
@@ -21,4 +21,4 @@ app.use('/graphql', graphqlHTTP({
   rootValue: root, 
   graphiql: true,   // Enable GraphiQL when server endpoint is accessed in browser
 }));
-app.listen(4000,  => console.log('Now browse to localhost:4000/graphql'));
+app.listen(4000, () => console.log('Now browse to localhost:4000/graphql'));
